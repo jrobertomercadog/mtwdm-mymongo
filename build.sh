@@ -2,15 +2,15 @@
 
 trap "echo TRAPed signal" HUP INT QUIT TERM
 
-mongod --bind_ip_all --auth &
+mongod --port 28017 --bind_ip_all --auth &
 
 FILE=/data/db/ready
 if [[ ! -f "$FILE" ]]; then
     sleep 11
     cd /tmp/mymongo/mtwdm-mymongo 
-    mongo admin adminstuff.js 
-    mongo --username=dba-root --password=whateverman --authenticationDatabase admin --host 127.0.0.1 --port 27017 dboperator.js 
-    mongo --username=dba-root --password=whateverman --authenticationDatabase admin --host 127.0.0.1 --port 27017 mydata.js
+    mongo --port 28017 admin adminstuff.js 
+    mongo --username=dba-root --password=whateverman --authenticationDatabase admin --host 127.0.0.1 --port 28017 dboperator.js 
+    mongo --username=dba-root --password=whateverman --authenticationDatabase admin --host 127.0.0.1 --port 28017 mydata.js
     touch /data/db/ready
 fi
 echo "[hit enter key to exit] or run docker stop <container>"
