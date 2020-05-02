@@ -1,4 +1,4 @@
-use mtwdm
+db = db.getSiblingDB('mtwdm')
 db.createUser(
   {
     user: "dboperator",
