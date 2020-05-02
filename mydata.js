@@ -1,4 +1,4 @@
-use mtwdm
+db = db.getSiblingDB('mtwdm')
 db.createCollection('cars')
 db.cars.insertMany([
     {"codigo": "S10_1678", "descripcion": "1969 Harley Davidson Ultimate Chopper", "categoria": "Motorcycles", "proveedor": "Min Lin Diecast", "provDescr": "This replica features working kickstand, front suspension, gear-shift lever, footbrake lever, drive chain, wheels and steering. All parts are particularly delicate due to their precise scale and require special care and attention.", "precio": 48810.00},
