@@ -1,3 +1,4 @@
+use mtwdm
 db.createUser(
   {
     user: "dboperator",
