@@ -2,7 +2,7 @@
 
 trap "echo TRAPed signal" HUP INT QUIT TERM
 
-mongod --auth &
+mongod --bind_ip_all --auth &
 
 FILE=/data/db/ready
 if [[ ! -f "$FILE" ]]; then
